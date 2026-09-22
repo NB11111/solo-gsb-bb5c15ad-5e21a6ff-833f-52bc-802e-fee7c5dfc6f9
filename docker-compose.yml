@@ -1,0 +1,13 @@
+services:
+  app:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      DATA_DIR: /app/data
+    volumes:
+      - battery_data:/app/data
+    restart: unless-stopped
+
+volumes:
+  battery_data:
